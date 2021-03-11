@@ -30,31 +30,35 @@
 </script>
 <!--End of Tawk.to Script-->
 <body id="page-top">
+
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 
     <div class="container">
+        <div class="row">
+            <div class="col-12 text-right">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars ml-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#bookNow">Book Now!</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">{{__('customLang.services')}}</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger text-warning" href="#bookNow">{{__('customLang.booknow')}}</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">{{__('customLang.about')}}</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">{{__('customLang.team')}}</a></li>
+
 
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('customLang.login') }}</a>
                         </li>
                     @endif
 
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('customLang.register') }}</a>
                         </li>
                     @endif
                 @else
@@ -77,15 +81,35 @@
                     </li>
                 @endguest
             </ul>
+
+        </div>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="lang/en">EN</a>
+            <a href="lang/spn">ESP</a>
+            <a href="lang/fr">FR</a>
         </div>
     </div>
+
 </nav>
+
 <!-- Masthead-->
 <header class="masthead">
     <div class="container">
-        <div class="masthead-subheading">Welcome To Taxes Time!</div>
-        <div class="masthead-heading">It's not about how much money you make, but how much you can keep!</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+        <div class="masthead-subheading">
+            {{__('customLang.welcome')}}
+{{--            {{__('customLang.chooseLang')}}--}}
+
+        </div>
+    </div>
+
+        <div class="content">
+
+
+        <div class="masthead-heading">{{__('customLang.motto')}}</div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href= "#services">{{__('customLang.tellmemore')}}</a>
     </div>
 </header>
 <!-- Services-->
