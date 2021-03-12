@@ -1,42 +1,42 @@
+<form id="regForm" action="">
 
-@extends('layouts.app')
-<section class="page-section" id="contact">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Contact Us</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-        <form id="contactForm" name="sentMessage" novalidate="novalidate">
-            <div class="row align-items-stretch mb-5">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name." />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address." />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="form-group mb-md-0">
-                        <input class="form-control" id="pwrd" type="password" placeholder="create your password *" required="required" data-validation-required-message="Please enter your phone number." />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="form-group mb-md-0">
-                        <input class="form-control" id="pwrd" type="password" placeholder="confirm your password *" required="required" data-validation-required-message="Please enter your phone number." />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group form-group-textarea mb-md-0">
-                        <textarea class="form-control" id="message" placeholder="Your Message * (optional)" ></textarea>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <div id="success"></div>
-                <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Sign Up</button>
-            </div>
-        </form>
+    <h1>Register:</h1>
+
+    <!-- One "tab" for each step in the form: -->
+    <div class="tab">Name:
+        <p><input placeholder="First name..." oninput="this.className = ''"></p>
+        <p><input placeholder="Last name..." oninput="this.className = ''"></p>
     </div>
-</section>
+
+    <div class="tab">Contact Info:
+        <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
+        <p><input placeholder="Phone..." oninput="this.className = ''"></p>
+    </div>
+
+    <div class="tab">Birthday:
+        <p><input placeholder="dd" oninput="this.className = ''"></p>
+        <p><input placeholder="mm" oninput="this.className = ''"></p>
+        <p><input placeholder="yyyy" oninput="this.className = ''"></p>
+    </div>
+
+    <div class="tab">Login Info:
+        <p><input placeholder="Username..." oninput="this.className = ''"></p>
+        <p><input placeholder="Password..." oninput="this.className = ''"></p>
+    </div>
+
+    <div style="overflow:auto;">
+        <div style="float:right;">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </div>
+    </div>
+
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+    </div>
+
+</form>
