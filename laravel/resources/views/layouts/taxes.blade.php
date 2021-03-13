@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,62 +32,86 @@
 </script>
 <!--End of Tawk.to Script-->
 <body id="page-top">
+
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 
     <div class="container">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars ml-1"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav text-uppercase ml-auto">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#bookNow">Book Now!</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+        <div class="row">
+            <div class="col-12 text-right">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">{{__('customLang.services')}}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger text-warning" href="#bookNow">{{__('customLang.booknow')}}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">{{__('customLang.about')}}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">{{__('customLang.team')}}</a></li>
 
-                @guest
-                    @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                    @endif
 
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('customLang.login') }}</a>
+                                </li>
+                            @endif
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('customLang.register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                                        {{ __('Logout') }}
+                                    </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
-            </ul>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="lang/en">EN</a>
+            <a href="lang/spn">ESP</a>
+            <a href="lang/fr">FR</a>
         </div>
     </div>
+
 </nav>
+
 <!-- Masthead-->
 <header class="masthead">
     <div class="container">
-        <div class="masthead-subheading">Welcome To Taxes Time!</div>
-        <div class="masthead-heading">It's not about how much money you make, but how much you can keep!</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+        <div class="masthead-subheading">
+            {{__('customLang.welcome')}}
+            {{--            {{__('customLang.chooseLang')}}--}}
+
+        </div>
+    </div>
+
+    <div class="content">
+
+
+        <div class="masthead-heading">{{__('customLang.motto')}}</div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href= "#services">{{__('customLang.tellmemore')}}</a>
     </div>
 </header>
 <!-- Services-->
@@ -123,12 +149,23 @@
         </div>
     </div>
 </section>
-<!-- Portfolio Grid-->
+<!-- Book Now!-->
 <section class="page-section bg-light" id="bookNow">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Book your appointment</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">Get the help you need in four easy steps!</h2>
+            <h3 class="section-subheading text-muted ">
+                <ul>
+                    <li>&#10003 Fill out a free consultation form</li>
+                    <li>&#10003 Book your appointment with one of our advisors</li>
+                    <li>&#10003 We will get back to you with a  preparation report for your annual taxes</li>
+                    <li>&#10003 If agreed, we will take care of your taxes paper work within 24 hours!</li>
+
+                </ul>
+            </h3>
+
+            <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href= "">{{__('taxform')}}</a>
+
         </div>
         <div class="row">
             <div class="col-lg-4 col-sm-6 mb-4">
@@ -212,11 +249,15 @@
                     <div class="portfolio-caption">
                         <div class="portfolio-caption-heading">Window</div>
                         <div class="portfolio-caption-subheading text-muted">Photography</div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 </section>
 <!-- About-->
 <section class="page-section" id="about">
@@ -343,47 +384,7 @@
         </div>
     </div>
 </div>
-<!-- Contact-->
-<section class="page-section" id="contact">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Contact Us</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-        <form id="contactForm" name="sentMessage" novalidate="novalidate">
-            <div class="row align-items-stretch mb-5">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name." />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address." />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="form-group mb-md-0">
-                        <input class="form-control" id="pwrd" type="password" placeholder="create your password *" required="required" data-validation-required-message="Please enter your phone number." />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="form-group mb-md-0">
-                        <input class="form-control" id="pwrd" type="password" placeholder="confirm your password *" required="required" data-validation-required-message="Please enter your phone number." />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group form-group-textarea mb-md-0">
-                        <textarea class="form-control" id="message" placeholder="Your Message * (optional)" ></textarea>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <div id="success"></div>
-                <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Sign Up</button>
-            </div>
-        </form>
-    </div>
-</section>
+
 <!-- Footer-->
 <footer class="footer py-4">
     <div class="container">

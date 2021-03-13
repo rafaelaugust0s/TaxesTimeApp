@@ -21,15 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-{{--<style>--}}
-{{--    body{--}}
-{{--        background: url("https://media.tavid.ee/s/resize/960/product_catalog/1-oz-canadian-maple-leaf-gold-coin-previous-years/canada_maple_leaf_2015_1_oz_investment_gold_coin_reverse.jpg?v5");--}}
-{{--    background-repeat: no-repeat;--}}
-{{--        background-size: cover;--}}
-{{--        background-position-y: -150px--}}
-{{--    ;--}}
-{{--    }--}}
-{{--</style>--}}
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

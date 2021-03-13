@@ -29,4 +29,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('lang/{locale}', function ($locale) {
     session()->put('locale', $locale);
     return redirect()->back();
+
 });
+
+Route::get("/taxform",function(){
+    return view('taxform');
+});
+

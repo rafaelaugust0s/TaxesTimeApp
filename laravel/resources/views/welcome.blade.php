@@ -151,9 +151,18 @@
 <section class="page-section bg-light" id="bookNow">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Book your appointment</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href= "">{{__('taxform.')}}</a>
+            <h2 class="section-heading text-uppercase">Get the help you need in four easy steps!</h2>
+            <h3 class="section-subheading text-muted ">
+                <ul>
+                    <li>&#10003 Fill out a free consultation form</li>
+                    <li>&#10003 Book your appointment with one of our advisors</li>
+                    <li>&#10003 We will get back to you with a  preparation report for your annual taxes</li>
+                    <li>&#10003 If agreed, we will take care of your taxes paper work within 24 hours!</li>
+
+                </ul>
+            </h3>
+
+            <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href= "/taxform">{{__('START NOW!')}}</a>
 
         </div>
         <div class="row">
