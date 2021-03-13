@@ -1,5 +1,7 @@
 @extends('layouts.taxes')
 
+@section('title','home')
+
 
 @section('content')
 <div class="container">

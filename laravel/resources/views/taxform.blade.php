@@ -1,3 +1,75 @@
+{{--@extends('layouts.taxes')--}}
+
+
+    @section('mainNav')
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-right">
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            Menu
+                            <i class="fas fa-bars ml-1"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav text-uppercase ml-auto">
+                                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">{{__('customLang.services')}}</a></li>
+                                <li class="nav-item"><a class="nav-link js-scroll-trigger text-warning" href="#bookNow">{{__('customLang.booknow')}}</a></li>
+                                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">{{__('customLang.about')}}</a></li>
+                                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">{{__('customLang.team')}}</a></li>
+
+
+                                @guest
+                                    @if (Route::has('login'))
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('login') }}">{{ __('customLang.login') }}</a>
+                                        </li>
+                                    @endif
+
+                                    @if (Route::has('register'))
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('register') }}">{{ __('customLang.register') }}</a>
+                                        </li>
+                                    @endif
+                                @else
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }}
+                                        </a>
+
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                @endguest
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="links">
+                    <a href="lang/en">EN</a>
+                    <a href="lang/spn">ESP</a>
+                    <a href="lang/fr">FR</a>
+                </div>
+            </div>
+
+        </nav>
+
+@endsection
+
+
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +84,7 @@
     }
 
     #regForm {
-        background-color: #ffffff;
+        background-color: none;
         margin: 100px auto;
         font-family: Raleway;
         padding: 40px;
@@ -22,14 +94,21 @@
 
     h1 {
         text-align: center;
+        color: white;
+        font-weight: bolder;
+        font-size: 40px;
+
     }
 
     input {
-        padding: 10px;
+        padding: 15px;
         width: 100%;
-        font-size: 17px;
+        font-size: 25px ;
         font-family: Raleway;
-        border: 1px solid #aaaaaa;
+        color: white; !important;
+        border: 1px solid white;
+        background: none;
+        /*font-weight: bold;*/
     }
 
     /* Mark input boxes that gets an error on validation: */
@@ -40,14 +119,16 @@
     /* Hide all steps by default: */
     .tab {
         display: none;
+        color: white;
+        font-size: 30px;
     }
 
     button {
-        background-color: #4CAF50;
-        color: #ffffff;
-        border: none;
+        background: none;
+        color: white;
+        border: 1px solid #aaaaaa;
         padding: 10px 20px;
-        font-size: 17px;
+        font-size: 25px;
         font-family: Raleway;
         cursor: pointer;
     }
@@ -57,7 +138,8 @@
     }
 
     #prevBtn {
-        background-color: #bbbbbb;
+        background: none;
+        border: white;
     }
 
     /* Make circles that indicate the steps of the form: */
@@ -87,8 +169,8 @@
         background: url("https://media.tavid.ee/s/resize/960/product_catalog/1-oz-canadian-maple-leaf-gold-coin-previous-years/canada_maple_leaf_2015_1_oz_investment_gold_coin_reverse.jpg?v5");
     background-repeat: no-repeat;
         background-size: cover;
-        background-position-y: -150px
-    ;
+        background-position-y: -150px;
+
     }
 </style>
 
@@ -106,8 +188,8 @@
         <p><input placeholder="Postal code..." oninput="this.className = ''" name="postalCode"></p>
         <p><input placeholder="City..." oninput="this.className = ''" name="city"></p>
         <p><input placeholder="Province..." oninput="this.className = ''" name="province"></p>
-
     </div>
+
     <div class="tab">Contact Info:
         <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
         <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>

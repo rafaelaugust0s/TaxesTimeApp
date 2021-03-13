@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,11 +31,13 @@
 <!--End of Tawk.to Script-->
 <body id="page-top">
 
+
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-
+    @section('mainNav')
     <div class="container">
         <div class="row">
+
             <div class="col-12 text-right">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -94,8 +94,9 @@
             <a href="lang/fr">FR</a>
         </div>
     </div>
-
 </nav>
+@show
+
 
 <!-- Masthead-->
 <header class="masthead">
@@ -154,17 +155,17 @@
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Get the help you need in four easy steps!</h2>
-            <h3 class="section-subheading text-muted ">
+            <div class="section-subheading text-muted ">
                 <ul>
-                    <li>&#10003 Fill out a free consultation form</li>
+                    <li>&#10003  Fill out a free consultation form </li>
                     <li>&#10003 Book your appointment with one of our advisors</li>
                     <li>&#10003 We will get back to you with a  preparation report for your annual taxes</li>
                     <li>&#10003 If agreed, we will take care of your taxes paper work within 24 hours!</li>
 
                 </ul>
-            </h3>
+            </div>
 
-            <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href= "">{{__('taxform')}}</a>
+            <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href= "/taxform">START NOW!</a>
 
         </div>
         <div class="row">
