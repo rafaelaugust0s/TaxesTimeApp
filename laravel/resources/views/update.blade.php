@@ -16,28 +16,29 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Update
-</button>
+{{--<!-- Button trigger modal -->--}}
+{{--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">--}}
+{{--    Update--}}
+{{--</button>--}}
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Taxes form Information</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="taxform_to_edit" method="post">
+{{--<!-- Modal -->--}}
+{{--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+{{--    <div class="modal-dialog" role="document">--}}
+{{--        <div class="modal-content">--}}
+{{--            <div class="modal-header">--}}
+{{--                <h5 class="modal-title" id="exampleModalLabel">Taxes form Information</h5>--}}
+{{--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--                    <span aria-hidden="true">&times;</span>--}}
+{{--                </button>--}}
+{{--            </div>--}}
+
+            <form action="/create_new_taxform" method="post">
                 <div class="modal-body">
 
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" class="form-control" placeholder="First Name" name="fname"
-                               value="{{$taxform_to_edit->fname}}">
+                               value="{{$taxform_to_edit->taxform}}">
                     </div>
                     <div class="form-group">
                         <label>Last Name</label>

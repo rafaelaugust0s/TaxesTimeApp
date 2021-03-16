@@ -66,22 +66,28 @@
             <br>
 
                 <table class="table table-dark table-striped">
-                    <br>
+                    @if(\Illuminate\Support\Facades\Session::has('msg'))
+                        <div class="alert alert-success">
+                            <strong>Success!</strong> {{\Illuminate\Support\Facades\Session::get('msg')}}</a>.
+                        </div>
+                    @endif
+                        <div class="text-white">
+                            <p> To delete records added  click on name.</p>
+                        </div>
                 @foreach($mytaxesform as $taxform)
 
                         <thead>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" >
-                            <a href="/update/={{$taxform->id}}">UPDATE</a>
-                        </button>
-                        <div class="text-white">
-                            <p> To delete all the form click on your name</p>
-                        </div>
 {{--                        <button type="button" class="btn btn-primary" data-toggle="modal" >--}}
 {{--                            <a href="/delete?id/={{$taxform->id}}">DELETE {{$taxform->fname}}</a>--}}
 {{--                        </button>--}}
 
                         <tr>
-                            <th>First Name</th>
+
+                            <th>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" >
+                                    <a href="/update/={{$taxform->id}}">UPDATE</a>
+                                </button>
+                                First Name</th>
                             <th>Last Name</th>
                             <th>Date Of Birth  (YYYY/MM/DD)</th>
                             <th>Address</th>
@@ -97,9 +103,13 @@
                         </thead>
 
                         <tbody>
+
                         <tr>
+
                             <td>
                                 <a href="/delete?id={{$taxform->id}}"> {{$taxform->fname}}</a>
+
+
 
                             </td>
 
@@ -170,7 +180,7 @@
                 </table>
                 <div class="container text-white">
                     <p>***Our clients confidentiality is very important to us. We use SIN numbers to retrieve your records from CRA!</p>
-                    <h2>Thanks for your information!</h2>
+                    <h2>Thanks for your information! You may now book your appointment at your convenience!</h2>
                 </div>
         </div>
     </div>

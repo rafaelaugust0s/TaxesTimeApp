@@ -38,11 +38,11 @@
 <form  action="/create_new_taxform" method="post" id="regForm">
     {{csrf_field()}}
 
-    @if(\Illuminate\Support\Facades\Session::has('msg'))
-    <div class="alert alert-success">
-        <strong>Success!</strong> {{\Illuminate\Support\Facades\Session::get('msg')}}</a>.
-    </div>
-    @endif
+{{--    @if(\Illuminate\Support\Facades\Session::has('msg'))--}}
+{{--    <div class="alert alert-success">--}}
+{{--        <strong>Success!</strong> {{\Illuminate\Support\Facades\Session::get('msg')}}</a>.--}}
+{{--    </div>--}}
+{{--    @endif--}}
 
     <h1>Personal Information for Income Tax Purposes</h1>
     <!-- One "tab" for each step in the form: -->
