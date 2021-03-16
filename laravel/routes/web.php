@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Route::get('/myform',function(){
+//    return view('myform');
+//});
+
 Route::post('/create_new_taxform',[App\Http\Controllers\TaxformController::class, 'store']);
+
+Route::get('/myform',[\App\Http\Controllers\TaxformController::class,'myform']);
+
+Route::get('/delete',[\App\Http\Controllers\TaxformController::class,'delete']);
+Route::get('/update/{taxformId}',[\App\Http\Controllers\TaxformController::class,'update']);
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

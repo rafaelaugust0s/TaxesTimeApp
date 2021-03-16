@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+
+@include('nav')
     <!DOCTYPE html>
 <html lang="en">
 <head>
