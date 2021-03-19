@@ -32,7 +32,7 @@
 {{--                </button>--}}
 {{--            </div>--}}
 
-            <form action="/create_new_taxform" method="post">
+            <form action="/update" method="post">
                 <div class="modal-body">
 
                     <div class="form-group">

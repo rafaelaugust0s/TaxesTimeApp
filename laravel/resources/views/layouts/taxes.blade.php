@@ -31,13 +31,80 @@
 <!--End of Tawk.to Script-->
 <body id="page-top">
 
-
 <!-- Navigation-->
-@include('nav')
+{{--@section('mainNav')--}}
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger " href="#page-top"><i class="fas fa-home "></i></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ml-1"></i>
+        </button>
+        <div class="row">
+
+            <div class="col-12 text-right">
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">{{__('customLang.services')}}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger text-warning" href="#bookNow">{{__('customLang.booknow')}}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">{{__('customLang.about')}}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">{{__('customLang.team')}}</a></li>
+
+
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('customLang.login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('customLang.register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="lang/en">EN</a>
+            <a href="lang/spn">ESP</a>
+            <a href="lang/fr">FR</a>
+        </div>
+    </div>
+</nav>
+{{--@show--}}
+{{--@include('nav')--}}
 
 <!-- Masthead-->
 <header class="masthead">
     <div class="container">
+
         <div class="masthead-subheading">
             {{__('customLang.welcome')}}
             {{--            {{__('customLang.chooseLang')}}--}}
@@ -46,8 +113,6 @@
     </div>
 
     <div class="content">
-
-
         <div class="masthead-heading">{{__('customLang.motto')}}</div>
         <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href= "#services">{{__('customLang.tellmemore')}}</a>
     </div>
@@ -55,9 +120,10 @@
 <!-- Services-->
 <section class="page-section" id="services">
     <div class="container">
+
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Services</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h3 class="section-subheading text-muted">We offer our service in Engllsh Spanish and French</h3>
         </div>
         <div class="row text-center">
             <div class="col-md-4">
@@ -85,131 +151,122 @@
                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
             </div>
         </div>
+        <br> <br>
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Get the help you need in four easy steps!</h2>
+            <div class="section-subheading text-muted ">  </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="taxes/assets/img/portfolio/05-thumbnail.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">&#10003  Fill out a free consultation form</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="taxes/assets/img/portfolio/01-thumbnail.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">&#10003 Book your appointment with one of our advisors</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="taxes/assets/img/portfolio/02-thumbnail.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">&#10003 We will get back to you with a  preparation report for your annual taxes</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="taxes/assets/img/portfolio/03-thumbnail.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">&#10003 If agreed, we will take care of your taxes paper work within 24 hours!</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="taxes/assets/img/portfolio/04-thumbnail.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Lines</div>
+                            <div class="portfolio-caption-subheading text-muted">Branding</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="taxes/assets/img/portfolio/06-thumbnail.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Window</div>
+                            <div class="portfolio-caption-subheading text-muted">Photography</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="masthead-heading"></div>
+                <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href= "/taxform">START NOW!</a>
+            </div>
+        </div>
     </div>
+            <br>
+
 </section>
+
 <!-- Book Now!-->
 <section class="page-section bg-light" id="bookNow">
     <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Get the help you need in four easy steps!</h2>
-            <div class="section-subheading text-muted ">
-                <ul>
-                    <li>&#10003  Fill out a free consultation form </li>
-                    <li>&#10003 Book your appointment with one of our advisors</li>
-                    <li>&#10003 We will get back to you with a  preparation report for your annual taxes</li>
-                    <li>&#10003 If agreed, we will take care of your taxes paper work within 24 hours!</li>
-
-                </ul>
-            </div>
-
-            <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href= "/taxform">START NOW!</a>
-
-        </div>
+        <br>
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Are you already our customer?</h2>
-{{--                <div class="section-subheading text-muted ">--}}
-{{--                    <ul>--}}
-{{--                        <li>&#10003  Fill out a free consultation form </li>--}}
-{{--                        <li>&#10003 Book your appointment with one of our advisors</li>--}}
-{{--                        <li>&#10003 We will get back to you with a  preparation report for your annual taxes</li>--}}
-{{--                        <li>&#10003 If agreed, we will take care of your taxes paper work within 24 hours!</li>--}}
-
-{{--                    </ul>--}}
-{{--                </div>--}}
-
-                <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href= "/taxform">BOOK NOW!</a>
-
-            </div>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="taxes/assets/img/portfolio/01-thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Threads</div>
-                        <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="taxes/assets/img/portfolio/02-thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Explore</div>
-                        <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="taxes/assets/img/portfolio/03-thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Finish</div>
-                        <div class="portfolio-caption-subheading text-muted">Identity</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="taxes/assets/img/portfolio/04-thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Lines</div>
-                        <div class="portfolio-caption-subheading text-muted">Branding</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="taxes/assets/img/portfolio/05-thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Southwest</div>
-                        <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="taxes/assets/img/portfolio/06-thumbnail.jpg" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Window</div>
-                        <div class="portfolio-caption-subheading text-muted">Photography</div>
-
-                    </div>
-                </div>
+                <p>Book your appointment at your convenience by clicking the window bellow!</p>
+                <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/rafaelaugustosc/1hour" style="min-width:320px;height:630px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
             </div>
         </div>
-    </div>
-
     </div>
 
 </section>
@@ -286,8 +343,8 @@
             <div class="col-lg-4">
                 <div class="team-member">
                     <img class="mx-auto rounded-circle" src="taxes/assets/img/team/1.jpg" alt="" />
-                    <h4>Kay Garland</h4>
-                    <p class="text-muted">Lead Designer</p>
+                    <h4>Melisa Delgado</h4>
+                    <p class="text-muted"> Payroll Specialist</p>
                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -296,8 +353,19 @@
             <div class="col-lg-4">
                 <div class="team-member">
                     <img class="mx-auto rounded-circle" src="taxes/assets/img/team/2.jpg" alt="" />
-                    <h4>Larry Parker</h4>
-                    <p class="text-muted">Lead Marketer</p>
+                    <h4>Aldo Delgado</h4>
+                    <p class="text-muted">Manager</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="taxes/assets/img/team/2.jpg" alt="" />
+                    <h4>Fernando Delgado</h4>
+                    <p class="text-muted">Accountant</p>
                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -305,9 +373,30 @@
             </div>
             <div class="col-lg-4">
                 <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="taxes/assets/img/team/3.jpg" alt="" />
-                    <h4>Diana Petersen</h4>
-                    <p class="text-muted">Lead Developer</p>
+                    <img class="mx-auto rounded-circle" src="taxes/assets/img/team/1.jpg" alt="" />
+                    <h4>Andrea Alba</h4>
+                    <p class="text-muted">Quickbooks And Payroll Specialist</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="taxes/assets/img/team/2.jpg" alt="" />
+                    <h4>Aldo Delgado</h4>
+                    <p class="text-muted">Manager</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="taxes/assets/img/team/1.jpg" alt="" />
+                    <h4>Anila</h4>
+                    <p class="text-muted">Accountant assistant</p>
                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>

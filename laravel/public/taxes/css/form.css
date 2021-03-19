@@ -8,7 +8,7 @@ body {
 }
 
 #regForm {
-    background-color: black;
+    background-color: white;
     margin: 100px auto;
     font-family: Raleway;
     padding: 40px;
@@ -18,7 +18,7 @@ body {
 
 h1 {
     text-align: center;
-    color: white;
+    color: black !important;
     font-weight: bolder;
     font-size: 40px;
 
