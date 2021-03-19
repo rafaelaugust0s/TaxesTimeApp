@@ -151,10 +151,10 @@
 
     <div class="container">
         <table class="table-bordered table-sm">
-            <div class="masthead-subheading">
+            <div class="masthead-heading">
                 <h1>Personal Information for Income Tax Purposes</h1>
                 <!-- One "tab" for each step in the form: -->
-                <h1>My Taxes Form Information ({{count($mytaxesform)}})records</h1>
+                <h1>My Taxes Form Information ({{count($mytaxesform)}})</h1>
             </div>
 
             @if(\Illuminate\Support\Facades\Session::has('msg'))
@@ -173,6 +173,7 @@
                 {{--                        </button>--}}
 
                 <tr>
+
                     <th>
                         <button type="button" class="btn btn-primary" data-toggle="modal" >
                             <a href="/update/={{$taxform->id}}">UPDATE</a>

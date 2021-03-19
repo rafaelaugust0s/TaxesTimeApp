@@ -15,6 +15,19 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="taxes/css/styles.css" rel="stylesheet" />
+     <!--Font for home link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 400px;
+            /* The height is 400 pixels */
+            width: 100%;
+            /* The width is the width of the web page */
+        }
+    </style>
 </head>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -37,11 +50,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger " href="#page-top"><i class="fas fa-home "></i></a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars ml-1"></i>
-        </button>
+        <div class="home-icon">
+            <a class="navbar-brand js-scroll-trigger " href="#page-top">
+                <p>Taxes Times</p></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+        </div>
+
         <div class="row">
 
             <div class="col-12 text-right">
@@ -123,7 +140,7 @@
 
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Services</h2>
-            <h3 class="section-subheading text-muted">We offer our service in Engllsh Spanish and French</h3>
+            <h3 class="section-subheading text-muted">We offer our service in English Spanish and French</h3>
         </div>
         <div class="row text-center">
             <div class="col-md-4">
@@ -140,7 +157,11 @@
                             <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
                         </span>
                 <h4 class="my-3">Business Income Tax T2</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">To keep organized in your small business. Put together all payroll related documents,
+                    corporation paperwork and seals, employee personal files,
+                    checkbook and any financial statements, insurance documentation and policy packets,
+                    petty cash on hand and tracking sheets, online login information and passwords!
+                </p>
             </div>
             <div class="col-md-4">
                         <span class="fa-stack fa-4x">
@@ -148,17 +169,18 @@
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span>
                 <h4 class="my-3"> Quickbooks accounting</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">We recommend you get yourself a bookeeping software.
+                    Gather all your receipts, bank credit card statements for your business. Don't wait last minute!</p>
             </div>
         </div>
         <br> <br>
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Get the help you need in four easy steps!</h2>
+            <h2 class="section-heading text-uppercase">Get the help you need in three easy steps!</h2>
             <div class="section-subheading text-muted ">  </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
                     <div class="portfolio-item">
-                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                        <a  href="/taxform">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -172,11 +194,11 @@
                 </div>
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <div class="portfolio-item">
-                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                        <a  href="#bookNow">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="taxes/assets/img/portfolio/01-thumbnail.jpg" alt="" />
+                            <img class="img-fluid" src="taxes/assets/img/portfolio/calendar1616128999.jpeg" alt="" />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">&#10003 Book your appointment with one of our advisors</div>
@@ -190,55 +212,11 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="taxes/assets/img/portfolio/02-thumbnail.jpg" alt="" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">&#10003 We will get back to you with a  preparation report for your annual taxes</div>
-                            <div class="portfolio-caption-subheading text-muted"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="taxes/assets/img/portfolio/03-thumbnail.jpg" alt="" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">&#10003 If agreed, we will take care of your taxes paper work within 24 hours!</div>
-                            <div class="portfolio-caption-subheading text-muted"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
                             <img class="img-fluid" src="taxes/assets/img/portfolio/04-thumbnail.jpg" alt="" />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Lines</div>
-                            <div class="portfolio-caption-subheading text-muted">Branding</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="taxes/assets/img/portfolio/06-thumbnail.jpg" alt="" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Window</div>
-                            <div class="portfolio-caption-subheading text-muted">Photography</div>
-
+                            <div class="portfolio-caption-heading">&#10003 We will get back to you with a  preparation report for your annual taxes and we will take care of your taxes paper work within 24 hours!</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
                         </div>
                     </div>
                 </div>
@@ -252,22 +230,31 @@
             <br>
 
 </section>
-
+<section>
 <!-- Book Now!-->
-<section class="page-section bg-light" id="bookNow">
+<div class="page-section bg-light" id="bookNow">
     <div class="container">
         <br>
-        <div class="container">
+        <div class="row">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Are you already our customer?</h2>
-                <p>Book your appointment at your convenience by clicking the window bellow!</p>
-                <!-- Calendly inline widget begin -->
-            <div class="calendly-inline-widget" data-url="https://calendly.com/rafaelaugustosc/1hour" style="min-width:320px;height:630px;"></div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            <!-- Calendly inline widget end -->
+                <h2 class="section-heading text-uppercase">Did you already update your taxes records with us?</h2>
+                <p>Is is time! We can officially start filing!
+                    Book your appointment at your convenience by clicking the window bellow!</p>
             </div>
+            <div class="col-lg-6 ">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/rafaelaugustosc/1hour" style="min-width:320px;height:630px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <!-- Calendly inline widget end -->
+            </div>
+
+            <div class="col-lg-6 ">
+                <img src="https://cent.imgix.net/bb87c48f-ebda-4dbc-89fd-50269df2d82a.gif?" alt=": ">
+            </div>
+
         </div>
     </div>
+</div>
 
 </section>
 <!-- About-->
@@ -404,7 +391,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+            <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">
+                    Please be advised you can send us your paperwork through E-mail or upload your files on the chat box window!</p></div>
         </div>
     </div>
 </section>
@@ -424,21 +412,67 @@
             <div class="col-md-3 col-sm-6 my-3">
                 <a href="#!"><img class="img-fluid d-block mx-auto" src="taxes/assets/img/logos/creative-market.jpg" alt="" /></a>
             </div>
-        </div>
+    </div>
     </div>
 </div>
+<!--Map to business-->
+<section class="text-center">
+    <h3>Our Location!</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9W_2ksM_3FpXQ3gnqkGqeWoSZ865RbaU&callback=initMap&libraries=&v=weekly"
+        async></script>
+    <script>
+        //Map to business
+        function initMap() {
+            // The location of YYZ
+            const toronto = { lat: 43.668251, lng: -79.459114 };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: toronto,
+            });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+                position: toronto,
+                map: map,
+            });
+        }
+    </script>
+</section>
+
+
+
+<div class="row">
+            <div class="col-lg-12 text-center">
+                <h6>  Office Hours:</h6>
+                <p>Mon - Fri : 10:00 AM to 5:00 PM    Sat : 11:00 AM to 5:00 PM</p>
+                <p> </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <i class="fas fa-phone fa-2x"></i>289 401-8489
+            </div>
+        </div>
+
+
 
 <!-- Footer-->
 <footer class="footer py-4">
     <div class="container">
         <div class="row align-items-center">
+
             <div class="col-lg-4 text-lg-left">Copyright © Taxes Time 2021</div>
             <div class="col-lg-4 my-3 my-lg-0">
                 <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                 <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                 <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                 <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
-
+                <div class= "btn btn-dark btn-social mx-2"><a href="mailto:delgado.financial@gmail.com"target="_blank"><i class="fas fa-envelope-square fa-1x text-white" ></i></a></div>
             </div>
             <div class="col-lg-4 text-lg-right">
                 <a class="mr-3" href="#!">Privacy Policy</a>
@@ -446,7 +480,8 @@
             </div>
         </div>
     </div>
-</footer>
+
+    </footer>
 <!-- Portfolio Modals-->
 <!-- Modal 1-->
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -628,7 +663,8 @@
         </div>
     </div>
 </div>
-<!-- Bootstrap core JS-->
+
+    <!-- Bootstrap core JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Third party plugin JS-->
@@ -638,6 +674,7 @@
 <script src="taxes/assets/mail/contact_me.js"></script>
 <!-- Core theme JS-->
 <script src="taxes/js/scripts.js"></script>
+
 
 </body>
 </html>

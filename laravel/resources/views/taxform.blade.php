@@ -166,7 +166,7 @@
             </datalist>
         </p>
     </div>
-
+{{--@if('maritalStatus'==="married")--}}
     <div class="tab">Spouse info:
         <p><input placeholder="Spouse Name..." oninput="this.className = ''" name="spouseFname"></p>
               <p><input placeholder="Spouse Last name..." oninput="this.className = ''" name="spouseLname" ></p>
