@@ -238,7 +238,7 @@
         <div class="row">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Did you already update your taxes records with us?</h2>
-                <p>Is is time! We can officially start filing!
+                <p>It is time! We can officially start filing!
                     Book your appointment at your convenience by clicking the window bellow!</p>
             </div>
             <div class="col-lg-6 ">
