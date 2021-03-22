@@ -18,6 +18,7 @@ return [
     'booknow'=> 'BOOK NOW!',
     'about'=>'ABOUT',
     'team'=> 'TEAM',
+    'contactus'=>'CONTACT US',
     'login'=>'LOGIN',
     'register'=>'REGISTER',
 

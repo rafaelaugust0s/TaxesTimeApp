@@ -20,116 +20,116 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <style>
+        body{
+        }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background:gray;
+        }
+
+        #regForm {
+            background-color: white;
+            margin: 100px auto;
+            font-family: Raleway;
+            padding: 40px;
+            width: 70%;
+            min-width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white !important;
+            font-weight: bolder;
+            font-size: 40px;
+
+        }
+
+        input {
+            padding: 15px;
+            width: 100%;
+            font-size: 25px ;
+            font-family: Raleway;
+            color: white; !important;
+            border: 1px solid white;
+            background: none;
+            /*font-weight: bold;*/
+        }
+
+        /* Mark input boxes that gets an error on validation: */
+        input.invalid {
+            background-color: #ffdddd;
+        }
+
+        /* Hide all steps by default: */
+        .tab {
+            display: none;
+            color: white;
+            font-size: 30px;
+        }
+
+        button {
+            background: none;
+            color: white;
+            border: 1px solid #aaaaaa;
+            padding: 10px 20px;
+            font-size: 25px;
+            font-family: Raleway;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #prevBtn {
+            background: none;
+            border: white;
+        }
+
+        /* Make circles that indicate the steps of the form: */
+        .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+        }
+
+        .step.active {
+            opacity: 1;
+        }
+
+        /* Mark the steps that are finished and valid: */
+        .step.finish {
+            background-color: #4CAF50;
+        }
+        .taxform{
+            /*background-color:#2e3436!important;*/
+
+            background: url("https://media.tavid.ee/s/resize/960/product_catalog/1-oz-canadian-maple-leaf-gold-coin-previous-years/canada_maple_leaf_2015_1_oz_investment_gold_coin_reverse.jpg?v5");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-y: -150px;
+        }
+        .table-bordered{
+            background-color: white!important;
+        }
+
+    </style>
 </head>
 
 
 
 <body>
-<style>
-    body{
-    }
 
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        background:gray;
-    }
-
-    #regForm {
-        background-color: white;
-        margin: 100px auto;
-        font-family: Raleway;
-        padding: 40px;
-        width: 70%;
-        min-width: 300px;
-    }
-
-    h1 {
-        text-align: center;
-        color: white !important;
-        font-weight: bolder;
-        font-size: 40px;
-
-    }
-
-    input {
-        padding: 15px;
-        width: 100%;
-        font-size: 25px ;
-        font-family: Raleway;
-        color: white; !important;
-        border: 1px solid white;
-        background: none;
-        /*font-weight: bold;*/
-    }
-
-    /* Mark input boxes that gets an error on validation: */
-    input.invalid {
-        background-color: #ffdddd;
-    }
-
-    /* Hide all steps by default: */
-    .tab {
-        display: none;
-        color: white;
-        font-size: 30px;
-    }
-
-    button {
-        background: none;
-        color: white;
-        border: 1px solid #aaaaaa;
-        padding: 10px 20px;
-        font-size: 25px;
-        font-family: Raleway;
-        cursor: pointer;
-    }
-
-    button:hover {
-        opacity: 0.8;
-    }
-
-    #prevBtn {
-        background: none;
-        border: white;
-    }
-
-    /* Make circles that indicate the steps of the form: */
-    .step {
-        height: 15px;
-        width: 15px;
-        margin: 0 2px;
-        background-color: #bbbbbb;
-        border: none;
-        border-radius: 50%;
-        display: inline-block;
-        opacity: 0.5;
-    }
-
-    .step.active {
-        opacity: 1;
-    }
-
-    /* Mark the steps that are finished and valid: */
-    .step.finish {
-        background-color: #4CAF50;
-    }
-    .taxform{
-        /*background-color:#2e3436!important;*/
-
-        background: url("https://media.tavid.ee/s/resize/960/product_catalog/1-oz-canadian-maple-leaf-gold-coin-previous-years/canada_maple_leaf_2015_1_oz_investment_gold_coin_reverse.jpg?v5");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position-y: -150px;
-    }
-    .table-bordered{
-        background-color: white!important;
-    }
-
-</style>
 
 
 
@@ -149,8 +149,10 @@
 {{--</div>--}}
 <section class="taxform">
 
+
     <div class="container">
         <table class="table-bordered table-sm">
+
             <div class="masthead-heading">
                 <h1>Personal Information for Income Tax Purposes</h1>
                 <!-- One "tab" for each step in the form: -->
@@ -168,9 +170,7 @@
             @foreach($mytaxesform as $taxform)
 
                 <thead>
-                {{--                        <button type="button" class="btn btn-primary" data-toggle="modal" >--}}
-                {{--                            <a href="/delete?id/={{$taxform->id}}">DELETE {{$taxform->fname}}</a>--}}
-                {{--                        </button>--}}
+
 
                 <tr>
 
@@ -345,6 +345,9 @@
         //... and adds the "active" class on the current step:
         x[n].className += " active";
     }
+
+
+
 </script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -128,6 +128,16 @@ class TaxformController extends Controller
         return view('update')->with(['taxform_to_edit' => $taxform]);
 
     }
+
+    public function replaceNumbers($chars){
+
+        $number= $_GET['sin'];
+        $replace= substr((string) $number,0, -strlen($chars)) . $chars;
+
+
+
+        return view('myform')->with(['mytaxesform' =>$replace] );
+    }
 }
 //
 //    public function status(){

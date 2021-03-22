@@ -29,13 +29,15 @@
 
         body {
 
+
         }
 
         #regForm {
+
             background-color: white;
             margin: 100px auto;
             font-family: Montserrat;
-            padding: 40px;
+            padding: 10px;
             width: 70%;
             min-width: 300px;
         }
@@ -112,25 +114,21 @@
         }
 
         .taxform{
-            /*background-color:#2e3436!important;*/
-            background: url("https://media.tavid.ee/s/resize/960/product_catalog/1-oz-canadian-maple-leaf-gold-coin-previous-years/canada_maple_leaf_2015_1_oz_investment_gold_coin_reverse.jpg?v5");
+            background-image: url("https://media.tavid.ee/s/crop/1200x1200/product_catalog/1-oz-canadian-maple-leaf-gold-coin-previous-years/canada_maple_leaf_2015_1_oz_investment_gold_coin_reverse.jpg?v5");
             background-repeat: no-repeat;
             background-size: cover;
             background-position-y: -100px;
         }
 
     </style>
-
 </head>
 
-
 <body >
-
 <section class="taxform">
 
-<form  action="/create_new_taxform" method="post" id="regForm">
-    {{csrf_field()}}
+    <form  action="/create_new_taxform" method="post" id="regForm">
 
+    {{csrf_field()}}
 
     <h1>Personal Information for Income Tax Purposes</h1>
     <!-- One "tab" for each step in the form: -->
@@ -151,7 +149,7 @@
     <div class="tab">Contact Info:
         <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
         <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-        <p><input placeholder="Social Security Number..." oninput="this.className = '' " name="sin" id="sin"></p>
+        <p><input placeholder="Social Security Number..." oninput="this.className = '' " name="sin" ></p>
 
     </div>
 
@@ -197,6 +195,7 @@
             <p><input placeholder="City..." oninput="this.className = ''" name="DCity"></p>
             <p><input placeholder="Province..." oninput="this.className = ''" name="DProvince"></p>
     </div>
+
     <div style="overflow:auto;">
         <div style="float:right;">
             <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -288,6 +287,9 @@
             x[n].className += " active";
         }
 
+
+
+
 </script>
 <!-- Bootstrap core JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -299,6 +301,7 @@
 <script src="taxes/assets/mail/contact_me.js"></script>
 <!-- Core theme JS-->
 <script src="taxes/js/scripts.js"></script>
+
 
 </body>
 </html>

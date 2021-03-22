@@ -18,6 +18,7 @@ return [
     'booknow'=> 'RESERVE AHORA!',
     'about'=>'ACERCA',
     'team'=> 'ASESORES',
+    'contactus'=>'CONTÁCTENOS',
     'login'=>'ENTRAR',
     'register'=>'REGISTRESE',
 

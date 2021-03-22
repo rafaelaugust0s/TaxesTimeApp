@@ -28,6 +28,49 @@
             /* The width is the width of the web page */
         }
     </style>
+
+    <style>
+        .links ul li{
+            float: right;
+            list-style: none;
+            position: relative;
+
+        }
+        .links ul li a{
+            display: block;
+            color: white !important;
+
+        }
+        .links ul li ul{
+            display: none;
+            color: white !important;
+
+        }
+        .links ul li:hover ul {
+            display: block;
+            color: white !important;
+
+        }
+        .links ul li ul li a{
+          padding: 8px 14px !important;
+
+        }
+        .links ul li ul li a:hover{
+            position: absolute;
+        }
+        .fas fa-check{
+            color: #2ca02c !important;
+        }
+        .steps{
+            color: black !important;
+            border-color: black !important;
+        }
+        .plant{
+            height: 300px !important;
+            padding: 5px !important;
+        }
+
+    </style>
 </head>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -69,7 +112,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger text-warning" href="#bookNow">{{__('customLang.booknow')}}</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">{{__('customLang.about')}}</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">{{__('customLang.team')}}</a></li>
-
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contactus">{{__('customLang.contactus')}}</a></li>
 
                         @guest
                             @if (Route::has('login'))
@@ -108,10 +151,18 @@
             </div>
         </div>
 
-        <div class="links">
-            <a href="lang/en">EN</a>
-            <a href="lang/spn">ESP</a>
-            <a href="lang/fr">FR</a>
+        <div class="links text-right">
+            <ul>
+                <li><a href="#"> <i class="fas fa-globe fa-2x "></i></a>
+                    <ul>
+                        <a href="lang/en">EN</a>
+                        <a href="lang/spn">ESP</a>
+                        <a href="lang/fr">FR</a>
+                    </ul>
+                </li>
+            </ul>
+
+
         </div>
     </div>
 </nav>
@@ -144,34 +195,74 @@
         </div>
         <div class="row text-center">
             <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
+                <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                         </span>
                 <h4 class="my-3">Personal Income Tax  T4</h4>
+                <h5> From $35</h5>
                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
             </div>
             <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                            <i class="fas fa-chart-bar fa-stack-1x fa-inverse"></i>
                         </span>
                 <h4 class="my-3">Business Income Tax T2</h4>
-                <p class="text-muted">To keep organized in your small business. Put together all payroll related documents,
+                <h5> From $160</h5>
+                <p class="text-muted">To keep organized in your business. Put together all payroll related documents,
                     corporation paperwork and seals, employee personal files,
                     checkbook and any financial statements, insurance documentation and policy packets,
                     petty cash on hand and tracking sheets, online login information and passwords!
                 </p>
+
             </div>
             <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
+                            <i class="fas fa-calculator fa-stack-1x fa-inverse"></i> </span>
                 <h4 class="my-3"> Quickbooks accounting</h4>
-                <p class="text-muted">We recommend you get yourself a bookeeping software.
+                <h5> From $130</h5>
+
+                <p class="text-muted">We recommend you get yourself a bookkeeping software.
                     Gather all your receipts, bank credit card statements for your business. Don't wait last minute!</p>
             </div>
+
+            <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-money-check-alt fa-stack-1x fa-inverse"></i> </span>
+                <h4 class="my-3"> Payroll remittance. HST/GST-WSIB. </h4>
+                <h5> From $120</h5>
+
+                <p class="text-muted">We recommend you get yourself a bookkeeping software.
+                    Gather all your receipts, bank credit card statements for your business. Don't wait last minute!</p>
+            </div>
+
+            <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="far fa-registered fa-stack-1x fa-inverse"></i> </span>
+                <h4 class="my-3"> Small Business And Corporation Registration</h4>
+                <h5> From $160</h5>
+
+                <p class="text-muted">To keep organized in your small business. Put together all payroll related documents,
+                    corporation paperwork and seals, employee personal files,
+                    checkbook and any financial statements, insurance documentation and policy packets,
+                    petty cash on hand and tracking sheets, online login information and passwords!</p>
+            </div>
+            <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-user-edit fa-stack-1x fa-inverse"></i> </span>
+                <h4 class="my-3"> Paper filing for Canada Pension Plan, Old Age security, Child Tax Benefit and other Government Entities </h4>
+                <h5> From $35</h5>
+
+                <p class="text-muted">We recommend you get yourself a bookkeeping software.
+                    Gather all your receipts, bank credit card statements for your business. Don't wait last minute!</p>
+            </div>
+
+
         </div>
         <br> <br>
         <div class="text-center">
@@ -181,80 +272,95 @@
                 <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
                     <div class="portfolio-item">
                         <a  href="/taxform">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
                             <img class="img-fluid" src="taxes/assets/img/portfolio/05-thumbnail.jpg" alt="" />
                         </a>
+                        <br>
+                        <br>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">&#10003  Fill out a free consultation form</div>
+                            <div class="section-subheading"><i class="fas fa-check fa-2x "></i> Fill out a free consultation form </div>
                             <div class="portfolio-caption-subheading text-muted"></div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <div class="portfolio-item">
-                        <a  href="#bookNow">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="taxes/assets/img/portfolio/calendar1616128999.jpeg" alt="" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">&#10003 Book your appointment with one of our advisors</div>
-                            <div class="portfolio-caption-subheading text-muted"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
+                        <a href="#phone">
+
                             <img class="img-fluid" src="taxes/assets/img/portfolio/04-thumbnail.jpg" alt="" />
                         </a>
+                        <br>
+                        <br>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">&#10003 We will get back to you with a  preparation report for your annual taxes and we will take care of your taxes paper work within 24 hours!</div>
+                            <div class=class="section-subheading"><i class="fas fa-check fa-2x " ></i> We will get back to you with a  preparation report for your annual taxes and we will take care of your taxes paper work within 24 hours!</div>
                             <div class="portfolio-caption-subheading text-muted"></div>
                         </div>
+                    </div>
+                </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="portfolio-item">
+                    <a  href="#bookNow">
+                        <img class="img-fluid" src="taxes/assets/img/portfolio/calendar.jpeg" alt="" />
+                    </a>
+                    <div class="portfolio-caption">
+                        <br><br>
+                        <div class="section-subheading"><i class="fas fa-check fa-2x "></i> Book your appointment with one of our advisors</div>
+                        <div class="portfolio-caption-subheading text-muted"></div>
                     </div>
                 </div>
             </div>
+                </div>
+            <br>
+            <br>
+            <br>
             <div class="content">
                 <div class="masthead-heading"></div>
-                <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href= "/taxform">START NOW!</a>
+                <a class="steps btn btn-primary btn-xl text-uppercase js-scroll-trigger" href= "/taxform">START NOW!</a>
+
             </div>
         </div>
     </div>
             <br>
 
 </section>
-<section>
+<section class="book">
 <!-- Book Now!-->
 <div class="page-section bg-light" id="bookNow">
     <div class="container">
         <br>
-        <div class="row">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Did you already update your taxes records with us?</h2>
-                <p>It is time! We can officially start filing!
-                    Book your appointment at your convenience by clicking the window bellow!</p>
+                <h2 class="section-heading text-uppercase">It is time! We can officially start filing!</h2>
+                <h3 class="section-subheading text-muted">Book your appointment at your convenience by clicking the window below!</h3>
+
             </div>
-            <div class="col-lg-6 ">
+        <div class="col-lg-12 mx-auto text-center">
+                <img class="plant"  src="https://cent.imgix.net/bb87c48f-ebda-4dbc-89fd-50269df2d82a.gif?" alt=": ">
+
+        </div>
+
+            <div class="col-lg-12 ">
                 <!-- Calendly inline widget begin -->
                 <div class="calendly-inline-widget" data-url="https://calendly.com/rafaelaugustosc/1hour" style="min-width:320px;height:630px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                 <!-- Calendly inline widget end -->
             </div>
-
-            <div class="col-lg-6 ">
-                <img src="https://cent.imgix.net/bb87c48f-ebda-4dbc-89fd-50269df2d82a.gif?" alt=": ">
-            </div>
+                <div class="row">
 
         </div>
+
+        </div>
+    <div class="row">
+        <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">
+            <p>Did you already update your taxes records with us?</p> <br>
+            <a class="steps btn btn-primary btn-xl text-uppercase js-scroll-trigger " href= "/myform">UPDATE NOW!</a>
+
+        </div>
+
     </div>
-</div>
+    </div>
+
+
+
 
 </section>
 <!-- About-->
@@ -397,24 +503,26 @@
     </div>
 </section>
 <!-- Clients-->
-<div class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6 my-3">
-                <a href="#!"><img class="img-fluid d-block mx-auto" src="taxes/assets/img/logos/envato.jpg" alt="" /></a>
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img class="img-fluid d-block mx-auto" src="taxes/assets/img/logos/quickbooks.png" alt="" /></a>
+                </div>
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img class="img-fluid d-block mx-auto" src="taxes/assets/img/logos/ria.png" alt="" /></a>
+                </div>
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img class="img-fluid d-block mx-auto" src="taxes/assets/img/logos/isova.png" alt="" /></a>
+                </div>
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img class="img-fluid d-block mx-auto" src="taxes/assets/img/logos/tbtax.png" alt="" /></a>
+                </div>
             </div>
-            <div class="col-md-3 col-sm-6 my-3">
-                <a href="#!"><img class="img-fluid d-block mx-auto" src="taxes/assets/img/logos/designmodo.jpg" alt="" /></a>
-            </div>
-            <div class="col-md-3 col-sm-6 my-3">
-                <a href="#!"><img class="img-fluid d-block mx-auto" src="taxes/assets/img/logos/themeforest.jpg" alt="" /></a>
-            </div>
-            <div class="col-md-3 col-sm-6 my-3">
-                <a href="#!"><img class="img-fluid d-block mx-auto" src="taxes/assets/img/logos/creative-market.jpg" alt="" /></a>
-            </div>
+        </div>
     </div>
-    </div>
-</div>
+
+
 <!--Map to business-->
 <section class="text-center">
     <h3>Our Location!</h3>
@@ -442,22 +550,28 @@
             });
         }
     </script>
+    <br>
+    <br>
 </section>
 
 
+<section>
+    <div class="row" id="contactus">
+        <div class="col-lg-12 text-center">
+            <h3>  Office Hours:</h3>
+            <p>Mon - Fri : 10:00 AM to 5:00 PM    Sat : 11:00 AM to 5:00 PM</p>
+            <p> </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center" >
+            <i class="fas fa-phone fa-2x"></i>289 401-8489
+            <br>
+            <a class="section-subheading" href="mailto:taxestimes@yourwebsite.com">taxestimes@yourwebsite.com </a>
+        </div>
+    </div>
+</section>
 
-<div class="row">
-            <div class="col-lg-12 text-center">
-                <h6>  Office Hours:</h6>
-                <p>Mon - Fri : 10:00 AM to 5:00 PM    Sat : 11:00 AM to 5:00 PM</p>
-                <p> </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <i class="fas fa-phone fa-2x"></i>289 401-8489
-            </div>
-        </div>
 
 
 
