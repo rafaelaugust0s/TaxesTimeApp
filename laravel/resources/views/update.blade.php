@@ -39,6 +39,7 @@
                     <!-- One "tab" for each step in the form: -->
 {{--                    <h1>My Taxes Form Information ({{count($mytaxesform)}})</h1>--}}
                 <form  action="/update/{{$taxform_to_edit->id}}" method="post" class="updateForm">
+                    {{csrf_field()}}
                     <h1>Personal Information for Income Tax Purposes UPDATE</h1>
 
                     <div class="modal-body">
@@ -129,13 +130,13 @@
                         </div>
                         <div class="form-group">
                             <label>Spouse Postal Code</label>
-                            <input type="text" class="form-control" placeholder="Spouse Postal Code" name="postalCode"
-                                   value="{{$taxform_to_edit->postalCode}}">
+                            <input type="text" class="form-control" placeholder="Spouse Postal Code" name="spousePostalCode"
+                                   value="{{$taxform_to_edit->spousePostalCode}}">
 
                         </div>
                         <div class="form-group">
                             <label>Spouse City</label>
-                            <input type="text" class="form-control" placeholder="Spouse City" name="SpouseCity"
+                            <input type="text" class="form-control" placeholder="Spouse City" name="spouseCity"
                                    value="{{$taxform_to_edit->spouseCity}}">
 
                         </div>

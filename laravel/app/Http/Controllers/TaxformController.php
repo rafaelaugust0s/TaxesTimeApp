@@ -128,8 +128,58 @@ class TaxformController extends Controller
     {
 
         $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $dateOfBirth = $_POST['dateOfBirth'];
+        $address = $_POST['address'];
+        $postalCode = $_POST['postalCode'];
+        $city = $_POST['city'];
+        $province = $_POST['province'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $sin = $_POST['sin'];
+        $maritalStatus = $_POST['maritalStatus'];
+        $spouseFname = $_POST['spouseFname'];
+        $spouseLname = $_POST['spouseLname'];
+        $spouseAddress = $_POST['spouseAddress'];
+        $spousePostalCode = $_POST['spousePostalCode'];
+        $spouseCity = $_POST['spouseCity'];
+        $spouseProvince = $_POST['spouseProvince'];
+
+        $Drelationship = $_POST['Drelationship'];
+        $DName = $_POST['DName'];
+        $DLname = $_POST['DLname'];
+        $DAddress = $_POST['DAddress'];
+        $DPostalCode = $_POST['DPostalCode'];
+        $DCity = $_POST['DCity'];
+        $DProvince = $_POST['DProvince'];
+
+
 
         $taxform->fname = $fname;
+        $taxform->lname = $lname;
+        $taxform->dateOfBirth = $dateOfBirth;
+        $taxform->address = $address;
+            $taxform->postalCode = $postalCode;
+        $taxform->city = $city;
+        $taxform->province = $province;
+        $taxform->email = $email;
+        $taxform->phone = $phone;
+        $taxform->sin = $sin;
+        $taxform->maritalStatus = $maritalStatus;
+        $taxform->spouseFname = $spouseFname;
+        $taxform->spouseLname = $spouseLname;
+        $taxform->spouseAddress = $spouseAddress;
+        $taxform->spousePostalCode = $spousePostalCode;
+        $taxform->spouseCity = $spouseCity;
+        $taxform->spouseProvince = $spouseProvince;
+
+        $taxform->Drelationship = $Drelationship;
+        $taxform->DName = $DName;
+        $taxform->DLname = $DLname;
+        $taxform->DAddress = $DAddress;
+        $taxform->DPostalCode = $DPostalCode;
+        $taxform->DCity = $DCity;
+        $taxform->DProvince = $DProvince;
 
         $taxform->save();
 

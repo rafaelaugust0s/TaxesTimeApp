@@ -228,7 +228,7 @@
                     <td>{{$taxform->spouseFname}}</td>
                     <td> {{$taxform->spouseLname}}</td>
                     <td> {{$taxform->spouseAddress}}</td>
-                    <td> {{$taxform->postalCode}}</td>
+                    <td> {{$taxform->spousePostalCode}}</td>
                     <td>{{$taxform->spouseCity}}</td>
                     <td>{{$taxform->spouseProvince}}
                     </td>
