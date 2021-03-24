@@ -118,27 +118,34 @@ class TaxformController extends Controller
     public function update(Taxform $taxform)
     {
 
-//        $taxformId = $_GET['taxformId'];
-
-//        die($taxformId);
-        //select * from taxform where id = $taxformId
-//        $taxform= Taxform::find($taxformId);
-
 
         return view('update')->with(['taxform_to_edit' => $taxform]);
 
     }
 
-    public function replaceNumbers($chars){
 
-        $number= $_GET['sin'];
-        $replace= substr((string) $number,0, -strlen($chars)) . $chars;
+    public function edit(Taxform $taxform)
+    {
 
+        $fname = $_POST['fname'];
 
+        $taxform->fname = $fname;
 
-        return view('myform')->with(['mytaxesform' =>$replace] );
+        $taxform->save();
+
+        return redirect('/myform');
     }
 }
+//    public function replaceNumbers($chars){
+//
+//        $number= $_GET['sin'];
+//        $replace= substr((string) $number,0, -strlen($chars)) . $chars;
+//
+//
+//
+//        return view('myform')->with(['mytaxesform' =>$replace] );
+//    }
+//}
 //
 //    public function status(){
 //

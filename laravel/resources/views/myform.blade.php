@@ -176,10 +176,11 @@
 
                     <th>
                         <button type="button" class="btn btn-primary" data-toggle="modal" >
-                            <a href="/update/={{$taxform->id}}">UPDATE</a>
+                            <a href="/update/{{$taxform->id}}">UPDATE</a>
                         </button>
                         First Name</th>
-                    <th>Last Name</th>
+                    <th>Last Name
+                    </th>
                     <th>Date Of Birth  (YYYY/MM/DD)</th>
                     <th>Address</th>
                     <th>Postal Code</th>
@@ -228,7 +229,7 @@
                     <td> {{$taxform->spouseLname}}</td>
                     <td> {{$taxform->spouseAddress}}</td>
                     <td> {{$taxform->postalCode}}</td>
-                    <td>{{$taxform->city}}</td>
+                    <td>{{$taxform->spouseCity}}</td>
                     <td>{{$taxform->spouseProvince}}
                     </td>
                     <td></td>
