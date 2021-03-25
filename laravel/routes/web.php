@@ -39,13 +39,14 @@ Route::post('/payment',function(){
 //Route::post('products/{id}/purchase', 'ProductController@purchase')->name('products.purchase');
 
 
-Route::post('/create_new_taxform',[App\Http\Controllers\TaxformController::class, 'store']);
+Route::post('/create_new_taxform',[App\Http\Controllers\TaxformController::class, 'store'])->middleware('auth');
 
-Route::get('/myform',[\App\Http\Controllers\TaxformController::class,'myform']);
+Route::get('/myform',[\App\Http\Controllers\TaxformController::class,'myform'])->middleware('auth');
 
-Route::get('/delete',[\App\Http\Controllers\TaxformController::class,'delete']);
-Route::get('/update/{taxform}',[\App\Http\Controllers\TaxformController::class,'update']);
-Route::post('/update/{taxform}',[\App\Http\Controllers\TaxformController::class,'edit']);
+
+Route::get('/delete',[\App\Http\Controllers\TaxformController::class,'delete'])->middleware('auth');
+Route::get('/update/{taxform}',[\App\Http\Controllers\TaxformController::class,'update'])->middleware('auth');
+Route::post('/update/{taxform}',[\App\Http\Controllers\TaxformController::class,'edit'])->middleware('auth');
 
 
 

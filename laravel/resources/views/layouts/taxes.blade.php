@@ -268,7 +268,8 @@
 
         </div>
         <br> <br>
-        <div class="text-center">
+
+        <div class="text-center" id="easy-steps">
             <h2 class="section-heading text-uppercase">Get the help you need in three easy steps!</h2>
             <div class="section-subheading text-muted ">  </div>
             <div class="row">

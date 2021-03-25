@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 
-@include('nav')
+{{--@include('nav')--}}
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +19,21 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="taxes/css/styles.css" rel="stylesheet" />
+
+    <style>
+        body{
+            background: url("https://www.aviva.ca/content/dam/aviva-public/ca/blog-images/additional-living-expenses--what-you-need-to-know.$blog_image_desktop$.jpg?$blog_image_desktop$");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .btn-primary{
+            color: #1a202c!important;
+            border-color: #fed136 !important;
+            background-color: #fed136 !important;
+
+        }
+
+    </style>
 </head>
 
 <body>

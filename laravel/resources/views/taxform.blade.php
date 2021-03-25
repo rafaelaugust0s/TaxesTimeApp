@@ -3,9 +3,6 @@
 {{--@include('nav')--}}
 
 
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +29,7 @@
 
         }
 
-        #regForm {
+        #fill-out {
 
             background-color: white;
             margin: 100px auto;
@@ -114,10 +111,18 @@
         }
 
         .taxform{
-            background-image: url("https://media.tavid.ee/s/crop/1200x1200/product_catalog/1-oz-canadian-maple-leaf-gold-coin-previous-years/canada_maple_leaf_2015_1_oz_investment_gold_coin_reverse.jpg?v5");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position-y: -100px;
+            background-color: black;
+            padding-top: 5px;
+            padding-bottom: 20px;
+            /*background-image: url("https://www.teahub.io/photos/full/351-3517487_casio-black-desk-calculator-preview.jpg");*/
+            background-image: url("https://wallpaperaccess.com/full/1453924.jpg");
+            /*background-image: url("https://s17026.pcdn.co/wp-content/uploads/sites/9/2017/02/Company-expenses-14217.jpeg");*/
+            /*background-image: url("https://www.ciphr.com/wp-content/uploads/2018/08/Pounds-and-a-calculator-880x300px.jpg");*/
+            /*background-image: url("https://media.tavid.ee/s/crop/1200x1200/product_catalog/1-oz-canadian-maple-leaf-gold-coin-previous-years/canada_maple_leaf_2015_1_oz_investment_gold_coin_reverse.jpg?v5");*/
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position-y: -100px;
+            /*opacity: 5%;*/
         }
 
     </style>
@@ -126,7 +131,7 @@
 <body >
 <section class="taxform">
 
-    <form  action="/create_new_taxform" method="post" id="regForm">
+    <form  action="/create_new_taxform" method="post" id="fill-out">
 
     {{csrf_field()}}
 

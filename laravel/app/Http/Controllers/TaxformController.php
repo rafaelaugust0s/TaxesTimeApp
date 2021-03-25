@@ -75,7 +75,7 @@ class TaxformController extends Controller
         //redirect user to the dashboard
 //        return redirect()->back();
 
-        return redirect('/myform')->with(['msg' => 'Your information was added successfully!']);
+        return redirect('/myform')->with(['msg' => 'Thanks for your information! We will get back to you within the next 24 hours. You may book your appointment!']);
 
 
     }
@@ -183,7 +183,8 @@ class TaxformController extends Controller
 
         $taxform->save();
 
-        return redirect('/myform');
+        return redirect('/myform')->with(['updatemsg' => 'Your information was updated successfully!']);
+
     }
 }
 //    public function replaceNumbers($chars){

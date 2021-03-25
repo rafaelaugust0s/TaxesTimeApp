@@ -73,7 +73,7 @@
         }
 
         button {
-            background: none;
+            background: none !important;
             color: white;
             border: 1px solid #aaaaaa;
             padding: 10px 20px;
@@ -113,15 +113,50 @@
         }
         .taxform{
             /*background-color:#2e3436!important;*/
+            padding-top: 150px;
+            padding-bottom: 450px;
+            padding-left: 3px;
+            padding-right: 200px;
 
             background: url("https://media.tavid.ee/s/resize/960/product_catalog/1-oz-canadian-maple-leaf-gold-coin-previous-years/canada_maple_leaf_2015_1_oz_investment_gold_coin_reverse.jpg?v5");
             background-repeat: no-repeat;
             background-size: cover;
-            background-position-y: -150px;
+            background-position-y: -100px;
         }
         .table-bordered{
             background-color: white!important;
+
+            /*display: inline-table !important;*/
+            /*table-layout:fixed !important;*/
+            /*padding-right: 50px!important;*/
+
+            /*border: none!important;*/
+            /*word-wrap:break-word!important;*/
+            /*overflow:scroll!important;*/
         }
+        .close{
+            position: center;
+
+            }
+        .update-btn{
+
+            text-color: #212529 !important;
+            background-color: #ffc107 !important;
+            border-color: #ffc107 !important;
+        }
+        .delete-btn{
+
+            text-color: #212529 !important;
+            background-color: red !important;
+            border-color: red !important;
+        }
+
+      .alert{
+          padding-right: 20px;
+          padding-left: 100px;
+
+      }
+
 
     </style>
 </head>
@@ -151,9 +186,13 @@
 
 
     <div class="container">
-        <table class="table-bordered table-sm">
 
+        <table class="table-bordered table-sm text-center" style="table-layout: fixed; width: 700px;"style="table-layout: fixed; width: 700px; border: 1px"><col width="100"/><col width="100"/>
+            <col width="130"/><col width="100"/><col width="100"/><col width="100"/><col width="100"/><col width="150"/><col width="100"/><col width="100"/><col width="100"/><col width="100"/>
             <div class="masthead-heading">
+                <button  class="close" id = "x">
+                    <a href="#easy-steps">X</a>
+                </button>
                 <h1>Personal Information for Income Tax Purposes</h1>
                 <!-- One "tab" for each step in the form: -->
                 <h1>My Taxes Form Information ({{count($mytaxesform)}})</h1>
@@ -164,20 +203,24 @@
                     <strong>Success!</strong> {{\Illuminate\Support\Facades\Session::get('msg')}}</a>.
                 </div>
             @endif
+
+            @if(\Illuminate\Support\Facades\Session::has('updatemsg'))
+                <div class="alert alert-warning">
+                    <strong>Success!</strong> {{\Illuminate\Support\Facades\Session::get('updatemsg')}}</a>.
+                </div>
+            @endif
+
+
+
             <div class="text-white">
-                <p> To delete records added  click on name.</p>
             </div>
             @foreach($mytaxesform as $taxform)
 
                 <thead>
-
-
                 <tr>
 
                     <th>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" >
-                            <a href="/update/{{$taxform->id}}">UPDATE</a>
-                        </button>
+
                         First Name</th>
                     <th>Last Name
                     </th>
@@ -190,15 +233,24 @@
                     <th>Phone</th>
                     <th>***SIN</th>
                     <th>Marital Status</th>
+                    <th> <button type="button" class="btn-sm text-lowercase update-btn"  >
+                            <a href="/update/{{$taxform->id}}" style="color: #2e3436">UPDATE</a>
+                        </button>
+                        <br>
+                        <br>
+
+                        <button type="button" class="btn-sm text-lowercase delete-btn"  >
+                            <a href="/delete?id={{$taxform->id}}" style="color: #2e3436"{{$taxform->fname}}>DELETE</a>
+                        </button>
+                        <br>
+
+                        </th>
                 </tr>
+
                 </thead>
                 <tbody>
                 <tr>
-                    <td>
-                        <a href="/delete?id={{$taxform->id}}"> {{$taxform->fname}}</a>
-
-                    </td>
-
+                    <td>{{$taxform->fname}}</td>
                     <td>{{$taxform->lname}}</td>
                     <td>{{$taxform->dateOfBirth}}</td>
                     <td>{{$taxform->address}}</td>
@@ -264,13 +316,13 @@
 
             @endforeach
         </table>
-        <div class="container text-white">
-            <p>***Our clients confidentiality is very important to us. We use SIN numbers to retrieve your records from CRA!</p>
-            <h2>Thanks for your information! You may now book your appointment at your convenience!</h2>
-        </div>
+
 
     </div>
-
+    <div class="container text-white">
+        <p>***Our clients confidentiality is very important to us. We use SIN numbers to retrieve your records from CRA!</p>
+        {{--            <h2>Thanks for your information! You may now book your appointment at your convenience!</h2>--}}
+    </div>
 </section>
 
         <script>
@@ -354,6 +406,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
 
 </body>
