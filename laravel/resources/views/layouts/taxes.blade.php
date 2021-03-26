@@ -361,7 +361,9 @@
         </div>
 
     </div>
-    </div>
+    @yield('content')
+
+</div>
 
 
 
@@ -525,7 +527,6 @@
             </div>
         </div>
     </div>
-
 
 <!--Map to business-->
 <section class="text-center">

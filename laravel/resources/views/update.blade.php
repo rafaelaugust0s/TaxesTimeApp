@@ -22,20 +22,27 @@
 
     <style>
        body{
+           /*background: url("https://www.southwestbroking.co.uk/wp-content/uploads/2017/05/digital-calculator-hd-wallpaper-1080p.jpg");*/
+           /*background-repeat: no-repeat;*/
+           /*background-size: cover;*/
            background-color: dimgray;
         }
        .updateForm{
            background-color: white;
 
        }
+       #update{
+           padding-right: 200px;
+           padding-left: 500px;
+       }
 
     </style>
 </head>
 
 <body>
-<section>
+<section id="update">
     <div class="container">
-            <div class="col-lg-8  masthead-heading">
+            <div class="col-lg-8  masthead-heading updateForm">
                     <!-- One "tab" for each step in the form: -->
 {{--                    <h1>My Taxes Form Information ({{count($mytaxesform)}})</h1>--}}
                 <form  action="/update/{{$taxform_to_edit->id}}" method="post" class="updateForm">
@@ -168,39 +175,29 @@
                             <label>Dependant Address</label>
                             <input type="text" class="form-control" placeholder="Dependant Address" name="DAddress"
                             value="{{$taxform_to_edit->DAddress}}">
-
                         </div>
                         <div class="form-group">
                             <label>Dependant Postal Code</label>
                             <input type="text" class="form-control" placeholder="Dependant Postal Code" name="DPostalCode"
                                    value="{{$taxform_to_edit->DPostalCode}}">
-
                         </div>
                         <div class="form-group">
                             <label>Dependant City</label>
                             <input type="text" class="form-control" placeholder="Dependant City" name="DCity"
                                    value="{{$taxform_to_edit->DCity}}">
-
                         </div>
                         <div class="form-group">
                             <label>Dependant Province</label>
                             <input type="text" class="form-control" placeholder="Dependant Province" name="DProvince"
                                    value="{{$taxform_to_edit->DProvince}}">
-
                         </div>
                     </div>
                     <div class="modal-footer">
                         <input type="submit" class="btn btn-warning" value="SAVE CHANGES">
                     </div>
                 </form>
-
-
             </div>
-
-
         </div>
-
-
 </section>
 
 </body>

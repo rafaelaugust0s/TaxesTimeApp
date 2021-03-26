@@ -19,11 +19,10 @@ Route::get('/', function () {
 });
 
 
+
 Auth::routes();
 
-//Route::get('/myform',function(){
-//    return view('myform');
-//});
+
 
 Route::get('/payment',function(){
     return view('payment');
@@ -47,6 +46,11 @@ Route::get('/myform',[\App\Http\Controllers\TaxformController::class,'myform'])-
 Route::get('/delete',[\App\Http\Controllers\TaxformController::class,'delete'])->middleware('auth');
 Route::get('/update/{taxform}',[\App\Http\Controllers\TaxformController::class,'update'])->middleware('auth');
 Route::post('/update/{taxform}',[\App\Http\Controllers\TaxformController::class,'edit'])->middleware('auth');
+Route::get('/index',[\App\Http\Controllers\FileController::class,'index']);
+Route::post('/index',[\App\Http\Controllers\FileController::class,'store'])->name('file.store');
+
+//Route::get('/', 'fileController@index');
+//Route::post('/store','FileController@store')->name('file.store');
 
 
 

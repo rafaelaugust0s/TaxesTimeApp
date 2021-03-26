@@ -39,7 +39,7 @@ class TaxformController extends Controller
         $DCity = $_POST['DCity'];
         $DProvince = $_POST['DProvince'];
 
-        //Store data to BD using nameModel( Model class)
+        //Store data to DB using nameModel( Model class)
 
         $taxform = new Taxform();
         $taxform->fname = $fname;
