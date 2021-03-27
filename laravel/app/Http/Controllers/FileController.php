@@ -22,7 +22,6 @@ class FileController extends Controller
         $file= $request->file('file');
         $file->store('upload');
         return view('index') ->with(['filemsg'=>'Your file has been uploaded successfully!!']);
-//        return redirect('/myform')->with(['updatemsg' => 'Your information was updated successfully!']);
 
     }
 }

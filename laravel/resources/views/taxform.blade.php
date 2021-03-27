@@ -132,46 +132,46 @@
 <body >
 <section class="taxform">
 
-    <form  action="/create_new_taxform" method="post" id="fill-out">
+    <form  action="/create_new_taxform" method="post" id="regForm">
 
     {{csrf_field()}}
 
     <h1>Personal Information for Income Tax Purposes</h1>
     <!-- One "tab" for each step in the form: -->
 
-    <div class="tab">Name:
+    <div class="tab"><span>Name:</span>
         <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
         <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
         <p><input placeholder="Date of Birth...YYYY/MM/DD" oninput="this.className = ''" name="dateOfBirth"></p>
 
     </div>
-    <div class="tab">Contact Info:
+        <div class="tab"><span>Contact Info:</span>
         <p><input placeholder="Address..." oninput="this.className = ''" name="address"></p>
         <p><input placeholder="Postal code..." oninput="this.className = ''" name="postalCode"></p>
         <p><input placeholder="City..." oninput="this.className = ''" name="city"></p>
         <p><input placeholder="Province..." oninput="this.className = ''" name="province"></p>
     </div>
 
-    <div class="tab">Contact Info:
+        <div class="tab"><span>Contact Info:</span>
         <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
         <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
         <p><input placeholder="Social Security Number..." oninput="this.className = '' " name="sin" ></p>
 
     </div>
 
-    <div class="tab">Marital Status:
-        <p><input list="status" placeholder="Marital Status." oninput="this.className = ''" name="maritalStatus">
-            <datalist  id="status">
-                <option value="single"></option>
-                <option value="married"></option>
-                <option value="divorced"></option>
-                <option value="separated"></option>
-                <option value="widowed"></option>
-            </datalist>
-        </p>
-    </div>
-{{--@if('maritalStatus'==="married")--}}
-    <div class="tab">Spouse info:
+        <div class="tab"><span>Marital Status </span>
+            <p>
+                <select id="status" oninput="this.className = ''" name="maritalStatus">
+                    <option value="single">single</option>
+                    <option value="married">married</option>
+                    <option value="divorced">divorced</option>
+                    <option value="separated">separated</option>
+                    <option value="widowed">widowed</option>
+                </select>
+            </p>
+        </div>
+
+    <div class="tab"><span>Spouse info:</span>
         <p><input placeholder="Spouse Name..." oninput="this.className = ''" name="spouseFname"></p>
               <p><input placeholder="Spouse Last name..." oninput="this.className = ''" name="spouseLname" ></p>
               <p><input placeholder="Spouse Address..." oninput="this.className = ''" name="spouseAddress"></p>
@@ -179,20 +179,20 @@
               <p><input placeholder="City..." oninput="this.className = ''" name="spouseCity"></p>
               <p><input placeholder="Province..." oninput="this.className = ''" name="spouseProvince"></p>
     </div>
-    <div class="tab">Dependents info:
+        <div class="tab"><span>Dependents info:</span>
         <p><input list="dependents" placeholder="How many dependents do you have?" oninput="this.className = ''" name="Drelationship">
-            <datalist id="dependents">
+            <select id="dependents">
                 <option value="one"></option>
                 <option value="two"></option>
                 <option value="three"></option>
                 <option value="four"></option>
                 <option value="five"></option>
                 <option value="none"></option>
-            </datalist>
+            </select>
          </p>
     </div>
 
-    <div class="tab"> Dependents info:
+        <div class="tab"> <span>Dependents info:</span>
           <p><input placeholder="relationship..." oninput="this.className = ''" name="Drelationship"></p>
             <p><input placeholder=" Name..." oninput="this.className = ''" name="DName"></p>
             <p><input placeholder=" Last name..." oninput="this.className = ''" name="DLname" ></p>
@@ -241,14 +241,29 @@
             //... and run a function that will display the correct step indicator:
             fixStepIndicator(n)
         }
-
         function nextPrev(n) {
+
+            var status = document.getElementById('status').value;
+
             // This function will figure out which tab to display
             var x = document.getElementsByClassName("tab");
+
+            var current_tab = x[currentTab].firstChild.innerHTML
+
+            console.log(status)
+            console.log(current_tab)
+            if(status == 'single'  && current_tab == 'Marital Status'){
+                x[currentTab].style.display = "none";
+                currentTab = currentTab + n + 1;
+                showTab(currentTab);
+            }
+
             // Exit the function if any field in the current tab is invalid:
             if (n == 1 && !validateForm()) return false;
             // Hide the current tab:
             x[currentTab].style.display = "none";
+
+
             // Increase or decrease the current tab by 1:
             currentTab = currentTab + n;
             // if you have reached the end of the form...
@@ -260,6 +275,41 @@
             // Otherwise, display the correct tab:
             showTab(currentTab);
         }
+        // function nextPrev(n) {
+        //     var status = document.getElementById('status').value;
+        //     // This function will figure out which tab to display
+        //     var x = document.getElementsByClassName("tab");
+        //
+        //     var current_tab = x[currentTab].firstChild.innerHTML
+        //
+        //     console.log(status)
+        //     console.log(current_tab)
+        //     if(status == 'single'  && current_tab == 'Marital Status'){
+        //
+        //         x[currentTab].style.display = "none";
+        //         currentTab = currentTab + n + 1;
+        //
+        //         showTab(currentTab);
+        //
+        //     }
+        //
+        //     // Exit the function if any field in the current tab is invalid:
+        //     if (n == 1 && !validateForm()) return false;
+        //     // Hide the current tab:
+        //     x[currentTab].style.display = "none";
+        //
+        //
+        //     // Increase or decrease the current tab by 1:
+        //     currentTab = currentTab + n;
+        //     // if you have reached the end of the form...
+        //     if (currentTab >= x.length) {
+        //         // ... the form gets submitted:
+        //         document.getElementById("regForm").submit();
+        //         return false;
+        //     }
+        //     // Otherwise, display the correct tab:
+        //     showTab(currentTab);
+        // }
 
         function validateForm() {
             // This function deals with validation of the form fields

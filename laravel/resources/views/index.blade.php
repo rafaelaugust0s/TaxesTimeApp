@@ -2,10 +2,7 @@
 
 
 
-<script>
 
-
-</script>
 
 @section('content')
 
@@ -19,7 +16,7 @@
 
         @if(\Illuminate\Support\Facades\Session::has('filemsg'))
             <div class="alert alert-success">
-                <strong>Success!</strong> {{\Illuminate\Support\Facades\Session::get('filemsg')}}</a>
+                <strong>Success!</strong> {{\Illuminate\Support\Facades\Session::get('filemsg')}}</a>.
             </div>
         @endif
 
@@ -37,24 +34,6 @@
         </form>
     </div>
 
-
-{{--        <form action="{{route('file.store')}}" method="post"--}}
-{{--            enctype="multipart/form-data">--}}
-{{--            {{csrf_field()}}--}}
-
-{{--            <input type="file" name="file" id="file">--}}
-
-{{--            <button class="submit" class="btn-info">UPLOAD</button>--}}
-
-
-
-
-{{--        </form>--}}
-
-
     </div>
-
-
-
 
 @endsection

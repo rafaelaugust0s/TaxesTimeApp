@@ -200,13 +200,13 @@
 
             @if(\Illuminate\Support\Facades\Session::has('msg'))
                 <div class="alert alert-success">
-                    <strong>Success!</strong> {{\Illuminate\Support\Facades\Session::get('msg')}}</a>.
+                    <strong>Success!</strong> {{\Illuminate\Support\Facades\Session::get('msg')}}</a>
                 </div>
             @endif
 
             @if(\Illuminate\Support\Facades\Session::has('updatemsg'))
                 <div class="alert alert-warning">
-                    <strong>Success!</strong> {{\Illuminate\Support\Facades\Session::get('updatemsg')}}</a>.
+                    <strong>Success!</strong> {{\Illuminate\Support\Facades\Session::get('updatemsg')}}</a>
                 </div>
             @endif
 
@@ -244,7 +244,13 @@
                         </button>
                         <br>
 
-                        </th>
+                        <button type="button" class="btn-sm text-lowercase upload-btn"  >
+                            <a href="/index" style="color: #2e3436">UPLOAD</a>
+                        </button>
+                        <br>
+
+
+                    </th>
                 </tr>
 
                 </thead>

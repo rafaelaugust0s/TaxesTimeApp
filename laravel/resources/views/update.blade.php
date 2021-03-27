@@ -22,10 +22,21 @@
 
     <style>
        body{
-           /*background: url("https://www.southwestbroking.co.uk/wp-content/uploads/2017/05/digital-calculator-hd-wallpaper-1080p.jpg");*/
-           /*background-repeat: no-repeat;*/
-           /*background-size: cover;*/
-           background-color: dimgray;
+           background-color: black;
+           padding-top: 5px;
+           padding-bottom: 20px;
+           background-image: url("http://my-tips.website2.me/upload/790741/images/8312F684BDE4E920.png");
+           /*background-image: url("https://data.personalfn.com/images/Financial-Planning-meaning.jpg");*/
+           /*background-image: url("https://www.restaurantbookkeepers.com.au/wp-content/uploads/2019/06/hand-3175107_1920.jpg");*/
+           /*background-image: url("https://www.teahub.io/photos/full/351-3517487_casio-black-desk-calculator-preview.jpg");*/
+           /*background-image: url("https://wallpaperaccess.com/full/1453924.jpg");*/
+           /*background-image: url("https://s17026.pcdn.co/wp-content/uploads/sites/9/2017/02/Company-expenses-14217.jpeg");*/
+           /*background-image: url("https://www.ciphr.com/wp-content/uploads/2018/08/Pounds-and-a-calculator-880x300px.jpg");*/
+           /*background-image: url("https://media.tavid.ee/s/crop/1200x1200/product_catalog/1-oz-canadian-maple-leaf-gold-coin-previous-years/canada_maple_leaf_2015_1_oz_investment_gold_coin_reverse.jpg?v5");*/
+           background-repeat: repeat;
+           background-size: contain;
+           /*background-position-y: -100px;*/
+           /*background-color: dimgray;*/
         }
        .updateForm{
            background-color: white;
